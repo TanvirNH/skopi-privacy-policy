@@ -1,1 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0A0A0B" />
+<meta name="description" content="Privacy Policy for Skopi — the fast, private QR code and barcode scanner for iPhone." />
+<title>Privacy Policy · Skopi</title>
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' fill='white'/><path d='M22 22h6v6h-6zm14 0h6v6h-6zM22 36h6v6h-6zm14 0h6v6h-6z' fill='black'/></svg>" />
+<style>
+  :root {
+    --bg: #0A0A0B;
+    --bg-elev: #141416;
+    --bg-card: #1A1A1D;
+    --stroke: rgba(255, 255, 255, 0.08);
+    --stroke-strong: rgba(255, 255, 255, 0.16);
+    --text: #FFFFFF;
+    --text-2: rgba(255, 255, 255, 0.72);
+    --text-3: rgba(255, 255, 255, 0.50);
+    --accent: #FFFFFF;
+    --hero-grad: linear-gradient(135deg, #B6FF6E 0%, #6EE7B7 50%, #60A5FA 100%);
+    --shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
+    --radius-lg: 28px;
+    --radius-md: 18px;
+    --radius-sm: 12px;
+  }
+
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(96, 165, 250, 0.10), transparent 60%),
+      radial-gradient(900px 500px at -10% 20%, rgba(110, 231, 183, 0.08), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 56px 22px 96px;
+  }
+
+  header.hero {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px 8px 8px;
+    border: 1px solid var(--stroke-strong);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    margin-bottom: 28px;
+  }
+  .logo .mark {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: #fff; color: #000;
+    display: grid; place-items: center;
+    font-weight: 700;
+  }
+  .logo .mark svg { width: 16px; height: 16px; }
+  .logo .name {
+    font-family: "SF Pro Rounded", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+  }
+
+  h1 {
+    font-family: "SF Pro Rounded", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 800;
+    font-size: clamp(36px, 5.4vw, 52px);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin: 0 0 14px;
+    background: var(--hero-grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .lede {
+    color: var(--text-2);
+    font-size: 17px;
+    margin: 0 auto;
+    max-width: 600px;
+  }
+
+  .meta {
+    margin-top: 18px;
+    color: var(--text-3);
+    font-size: 13px;
+    letter-spacing: 0.02em;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  section.card {
+    background: var(--bg-card);
+    border: 1px solid var(--stroke);
+    border-radius: var(--radius-lg);
+    padding: 28px 28px 22px;
+    box-shadow: var(--shadow);
+  }
+
+  section.card h2 {
+    font-family: "SF Pro Rounded", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0 0 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  section.card h2 .num {
+    flex: none;
+    width: 30px; height: 30px;
+    display: grid; place-items: center;
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--stroke);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-2);
+  }
+
+  section.card h3 {
+    font-family: "SF Pro Rounded", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 22px 0 6px;
+    color: var(--text);
+  }
+
+  section.card p, section.card li {
+    color: var(--text-2);
+  }
+
+  section.card p { margin: 10px 0; }
+
+  ul, ol { padding-left: 22px; margin: 8px 0; }
+  li { margin: 6px 0; }
+  li::marker { color: var(--text-3); }
+
+  strong { color: var(--text); font-weight: 600; }
+
+  a {
+    color: #BEE7FF;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(190, 231, 255, 0.35);
+    transition: border-color .15s ease;
+  }
+  a:hover { border-bottom-color: #BEE7FF; }
+
+  .pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 14px 0 4px;
+  }
+  .pill {
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 6px 11px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--stroke-strong);
+    color: var(--text-2);
+  }
+  .pill.ok { background: rgba(110, 231, 183, 0.10); border-color: rgba(110, 231, 183, 0.35); color: #B7F0D2; }
+  .pill.warn { background: rgba(250, 204, 21, 0.10); border-color: rgba(250, 204, 21, 0.32); color: #FDE68A; }
+
+  .toc {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--stroke);
+    border-radius: var(--radius-md);
+    padding: 18px 22px;
+    margin-bottom: 18px;
+  }
+  .toc h3 {
+    margin: 0 0 10px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-3);
+    font-weight: 700;
+  }
+  .toc ol { margin: 0; padding-left: 20px; columns: 2; column-gap: 28px; }
+  .toc a { color: var(--text); border-bottom: none; }
+  .toc a:hover { color: #BEE7FF; }
+  @media (max-width: 600px) { .toc ol { columns: 1; } }
+
+  .highlight {
+    margin-top: 14px;
+    padding: 14px 16px;
+    border-radius: var(--radius-sm);
+    background: rgba(110, 231, 183, 0.06);
+    border: 1px solid rgba(110, 231, 183, 0.18);
+    color: var(--text);
+    font-size: 14.5px;
+  }
+
+  footer {
+    margin-top: 48px;
+    padding-top: 28px;
+    border-top: 1px solid var(--stroke);
+    text-align: center;
+    color: var(--text-3);
+    font-size: 13px;
+  }
+  footer a { color: var(--text-2); }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 18px;
+    color: var(--text-2);
+    border-bottom: none;
+    font-weight: 500;
+  }
+  .back-link:hover { color: #fff; }
+
+  ::selection { background: rgba(110, 231, 183, 0.35); color: #fff; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div class="logo">
+        <span class="mark">
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="1" y="1" width="4" height="4" rx="0.5" fill="black"/>
+            <rect x="11" y="1" width="4" height="4" rx="0.5" fill="black"/>
+            <rect x="1" y="11" width="4" height="4" rx="0.5" fill="black"/>
+            <rect x="7" y="7" width="2" height="2" fill="black"/>
+            <rect x="11" y="7" width="2" height="2" fill="black"/>
+            <rect x="7" y="11" width="2" height="2" fill="black"/>
+            <rect x="13" y="13" width="2" height="2" fill="black"/>
+          </svg>
+        </span>
+        <span class="name">Skopi</span>
+      </div>
+      <h1>Privacy Policy</h1>
+      <p class="lede">Skopi is built around a simple promise: your scans stay on your device. This policy explains exactly what we collect, what we don&rsquo;t, and the choices you have.</p>
+      <p class="meta">Last updated: May 1, 2026 · Effective: May 1, 2026</p>
+    </header>
+
+    <main>
+      <nav class="toc" aria-label="Table of Contents">
+        <h3>Contents</h3>
+        <ol>
+          <li><a href="#summary">Summary</a></li>
+          <li><a href="#scope">Scope &amp; Operator</a></li>
+          <li><a href="#info-we-collect">Information We Collect</a></li>
+          <li><a href="#how-we-use">How We Use Information</a></li>
+          <li><a href="#permissions">Device Permissions</a></li>
+          <li><a href="#third-parties">Third-Party Services</a></li>
+          <li><a href="#tracking">App Tracking &amp; Advertising</a></li>
+          <li><a href="#purchases">Purchases &amp; Subscriptions</a></li>
+          <li><a href="#legal-bases">Legal Bases (GDPR / UK GDPR)</a></li>
+          <li><a href="#retention">Data Retention</a></li>
+          <li><a href="#security">Security</a></li>
+          <li><a href="#transfers">International Data Transfers</a></li>
+          <li><a href="#your-rights">Your Rights</a></li>
+          <li><a href="#california">California Privacy Rights</a></li>
+          <li><a href="#children">Children&rsquo;s Privacy</a></li>
+          <li><a href="#changes">Changes to This Policy</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ol>
+      </nav>
+
+      <section class="card" id="summary">
+        <h2><span class="num">★</span>Summary</h2>
+        <p>The short version, in plain English:</p>
+        <ul>
+          <li><strong>We do not run our own servers.</strong> Skopi has no account system. We never see your scans, your history, or the codes you generate.</li>
+          <li><strong>QR &amp; barcode scanning happens on your device.</strong> Skopi reads QR codes and 1D/2D retail and shipping barcodes (EAN, UPC, Code 128, ITF-14, PDF417, Data Matrix, Aztec, and more). Camera frames are processed locally by Apple&rsquo;s Vision framework and discarded immediately.</li>
+          <li><strong>Your scan history is stored only on your iPhone</strong> using Apple&rsquo;s on-device database (SwiftData).</li>
+          <li><strong>Product lookups</strong> for retail barcodes (EAN/UPC) query the public <a href="https://world.openfoodfacts.org" target="_blank" rel="noopener noreferrer">Open Food Facts</a> catalog over HTTPS using only the barcode digits &mdash; no personal data is sent.</li>
+          <li><strong>We show ads through Google AdMob</strong> in the free version. You can disable personalized ads via iOS&rsquo;s App Tracking Transparency prompt (or upgrade to Skopi Pro to remove ads entirely).</li>
+          <li><strong>Purchases are handled by Apple.</strong> We never see your payment details.</li>
+        </ul>
+        <div class="pill-row">
+          <span class="pill ok">No accounts</span>
+          <span class="pill ok">No cloud sync</span>
+          <span class="pill ok">On-device scanning</span>
+          <span class="pill warn">Ads via AdMob (free tier)</span>
+        </div>
+      </section>
+
+      <section class="card" id="scope">
+        <h2><span class="num">1</span>Scope &amp; Operator</h2>
+        <p>This Privacy Policy applies to the <strong>Skopi</strong> mobile application (the &ldquo;App&rdquo;) for iOS, distributed via the Apple App Store, and to the related websites at <a href="https://tanvirnh.github.io/skopi-privacy-policy/">tanvirnh.github.io/skopi-privacy-policy</a> and <a href="https://tanvirnh.github.io/skopi-support-/">tanvirnh.github.io/skopi-support-</a>.</p>
+        <p>The App is operated by an independent developer (&ldquo;<strong>we</strong>&rdquo;, &ldquo;<strong>us</strong>&rdquo;, &ldquo;<strong>our</strong>&rdquo;), reachable at <a href="mailto:tanvir4talk+appsupport@gmail.com">tanvir4talk+appsupport@gmail.com</a>. For the purposes of the EU General Data Protection Regulation (GDPR) and the UK GDPR, the operator acts as the data controller for the limited categories of personal data described below.</p>
+      </section>
+
+      <section class="card" id="info-we-collect">
+        <h2><span class="num">2</span>Information We Collect</h2>
+
+        <h3>Information processed entirely on your device (we never see it)</h3>
+        <ul>
+          <li><strong>Camera frames</strong> while the scanner is active. Frames are processed in real time by Apple&rsquo;s Vision framework to detect QR codes and 1D/2D barcodes (QR, EAN-13, EAN-8, UPC-A, UPC-E, Code 128, Code 39, Code 93, PDF417, Aztec, Data Matrix, ITF-14, Interleaved 2 of 5), then discarded. They are never recorded, uploaded, or written to disk.</li>
+          <li><strong>Photos you choose to scan</strong> from your photo library. Images are read into memory only long enough to detect a code, then discarded. We do not retain or transmit them.</li>
+          <li><strong>Decoded payloads</strong> (the text content of a QR code or barcode &mdash; for example a URL, product number, or contact card).</li>
+          <li><strong>Scan history</strong>, including timestamps, decoded payload, code type, symbology, and any notes or folder you assign. Stored in Apple&rsquo;s on-device SwiftData database.</li>
+          <li><strong>QR codes you generate</strong> in the Create tab and any associated input you provide.</li>
+          <li><strong>App preferences</strong> such as your selected tab, scan mode (Auto/QR/Barcode), batch-scan toggle, and app-lock settings, stored in iOS UserDefaults.</li>
+          <li><strong>Biometric authentication state</strong> if you enable App Lock. Face ID/Touch ID is handled entirely by iOS &mdash; we never receive or store your biometric data.</li>
+        </ul>
+
+        <h3>Information collected by Apple on our behalf</h3>
+        <ul>
+          <li><strong>In-app purchase status</strong> (whether you own Skopi Pro). Apple confirms entitlement to the App via StoreKit; we receive only a yes/no signal, not your Apple ID, payment method, or transaction details.</li>
+          <li><strong>Crash logs and aggregate App Store analytics</strong>, only if you have opted in to share them with developers in your iOS Settings. These are provided to us by Apple in anonymized, aggregated form.</li>
+        </ul>
+
+        <h3>Information collected by Google AdMob (free tier only)</h3>
+        <p>When ads are served, Google&rsquo;s AdMob SDK may collect, depending on your iOS Tracking permission:</p>
+        <ul>
+          <li>An advertising identifier (IDFA, only if you grant tracking permission in the iOS prompt; otherwise a non-personalized identifier)</li>
+          <li>Approximate location derived from IP address</li>
+          <li>Device and OS metadata (model, OS version, language, time zone, screen size)</li>
+          <li>Ad-interaction data (impressions, taps, requests)</li>
+        </ul>
+        <p>This information is collected directly by Google. We do not receive raw event data &mdash; only aggregated revenue reports. Google&rsquo;s practices are governed by the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a> and described in <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener noreferrer">Google AdMob&rsquo;s data disclosures</a>.</p>
+
+        <h3>Information we do not collect</h3>
+        <ul>
+          <li>We do not collect names, email addresses, phone numbers, or account credentials. Skopi has no account system.</li>
+          <li>We do not collect contacts, calendar entries, or messages.</li>
+          <li>We do not transmit your scan history, generated codes, photos, or notes off your device.</li>
+          <li>We do not use precise GPS location.</li>
+          <li>We do not record or store your camera feed.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="how-we-use">
+        <h2><span class="num">3</span>How We Use Information</h2>
+        <p>We use the limited information described above only to:</p>
+        <ul>
+          <li>Provide the core scanning, generation, and history features of the App on your device.</li>
+          <li>Verify your Skopi Pro entitlement so we can disable ads and unlock Pro features.</li>
+          <li>Serve and measure ads in the free tier (via Google AdMob, as described above).</li>
+          <li>Diagnose crashes and improve stability where Apple has shared anonymized crash reports with us.</li>
+          <li>Comply with legal obligations and protect against fraud or abuse.</li>
+        </ul>
+        <p>We do not use your information for profiling that produces legal or similarly significant effects on you, and we do not sell your personal information.</p>
+      </section>
+
+      <section class="card" id="permissions">
+        <h2><span class="num">4</span>Device Permissions</h2>
+        <p>Skopi will ask you for the following iOS permissions. Each is optional &mdash; you can decline or revoke any of them in <em>Settings &rarr; Skopi</em> at any time, with the consequences noted below.</p>
+        <ul>
+          <li><strong>Camera</strong> &mdash; required to scan QR codes and barcodes. Without it, the scanner tab cannot operate.</li>
+          <li><strong>Photo Library (selected photos only)</strong> &mdash; optional. Used only when you tap the Gallery button to scan a code from an existing image. We use the modern PHPicker, so we never see images you didn&rsquo;t pick.</li>
+          <li><strong>Face ID / Touch ID</strong> &mdash; optional. Used only if you enable App Lock. The biometric check is performed by iOS; we receive only a success/failure result.</li>
+          <li><strong>Tracking (App Tracking Transparency)</strong> &mdash; optional. If granted, the iOS advertising identifier (IDFA) may be used by Google AdMob to serve more relevant ads. If declined, ads are still shown but are non-personalized.</li>
+          <li><strong>Notifications</strong> &mdash; not used by Skopi.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="third-parties">
+        <h2><span class="num">5</span>Third-Party Services</h2>
+        <p>Skopi integrates the minimum set of third-party services needed to operate. Each is bound by its own privacy policy.</p>
+        <ul>
+          <li><strong>Apple Inc.</strong> &mdash; App Store distribution, in-app purchases (StoreKit), on-device APIs (Vision, AVFoundation, SwiftData, LocalAuthentication). See the <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple Privacy Policy</a>.</li>
+          <li><strong>Google AdMob</strong> (Google Ireland Limited / Google LLC) &mdash; ad serving and measurement in the free tier. See the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>, the <a href="https://support.google.com/admob/answer/7665968" target="_blank" rel="noopener noreferrer">AdMob &amp; AdSense data security and privacy</a> page, and the <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener noreferrer">data Google may collect</a>.</li>
+          <li><strong>Open Food Facts</strong> &mdash; an open, community-run database of consumer products. When you scan an EAN/UPC barcode, Skopi sends the barcode digits to Open Food Facts over HTTPS to retrieve the product name, brand, and image (where available). No personal data, identifiers, or IP-derived profile is sent. See the <a href="https://world.openfoodfacts.org/cgi/privacy.pl" target="_blank" rel="noopener noreferrer">Open Food Facts Privacy Policy</a>.</li>
+          <li><strong>GitHub Pages</strong> &mdash; hosts this Privacy Policy and our Support page as static content. GitHub may log your IP address and User-Agent for abuse prevention. See the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub General Privacy Statement</a>.</li>
+        </ul>
+        <p>We do not use first-party analytics, attribution SDKs, push services, social-network SDKs, or any other tracking-capable third parties.</p>
+      </section>
+
+      <section class="card" id="tracking">
+        <h2><span class="num">6</span>App Tracking &amp; Advertising</h2>
+        <p>Skopi&rsquo;s free tier is supported by ads served through Google AdMob. We use three ad formats: a small banner on certain screens, an occasional full-screen interstitial after you finish reviewing a scan, and an app-open ad on cold launches. We never show ads on top of the live camera view, and ads are frequency-capped to limit interruptions.</p>
+        <p>The first time the App needs to show ads, iOS will display the standard <strong>App Tracking Transparency</strong> prompt asking whether you allow tracking across other companies&rsquo; apps and websites:</p>
+        <ul>
+          <li>If you <strong>allow</strong>, AdMob may use your iOS advertising identifier (IDFA) to serve personalized ads and measure performance.</li>
+          <li>If you <strong>ask app not to track</strong>, AdMob will serve only non-personalized, contextually targeted ads, and will not link ad events to your IDFA. You will still see ads, but they will be less relevant.</li>
+        </ul>
+        <p>You can change this choice at any time in <em>iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking &rarr; Skopi</em>. You can also reset your advertising identifier in <em>Settings &rarr; Privacy &amp; Security &rarr; Tracking</em>.</p>
+
+        <h3>EU / UK / Swiss users &mdash; consent for personalized ads</h3>
+        <p>For users in the European Economic Area, the United Kingdom, and Switzerland, Google AdMob also operates a Consent Management Platform that asks for additional consent under the EU&rsquo;s ePrivacy and GDPR rules. If you decline, AdMob will not store or read non-essential information on your device for advertising purposes, and ads will be limited to non-personalized inventory.</p>
+
+        <h3>Removing ads entirely</h3>
+        <p>You can purchase <strong>Skopi Pro</strong> as an in-app purchase to remove all ads from the App. With Pro active, the AdMob SDK is not invoked.</p>
+      </section>
+
+      <section class="card" id="purchases">
+        <h2><span class="num">7</span>Purchases &amp; Subscriptions</h2>
+        <p>All purchases of Skopi Pro are processed by Apple via StoreKit and are subject to the <a href="https://www.apple.com/legal/internet-services/itunes/" target="_blank" rel="noopener noreferrer">Apple Media Services Terms</a>. We do not receive your name, billing address, payment instrument, or Apple ID. We receive only an anonymous, App-scoped entitlement signal indicating whether your Apple ID has purchased Pro.</p>
+        <p>Refund and cancellation requests must be handled through Apple. You can manage subscriptions and request a refund at <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener noreferrer">reportaproblem.apple.com</a>.</p>
+      </section>
+
+      <section class="card" id="legal-bases">
+        <h2><span class="num">8</span>Legal Bases (GDPR / UK GDPR)</h2>
+        <p>If you are located in the EEA, the UK, or Switzerland, we rely on the following legal bases under Article 6 GDPR:</p>
+        <ul>
+          <li><strong>Performance of a contract</strong> (Art. 6(1)(b)) &mdash; to provide the App and its core features to you.</li>
+          <li><strong>Legitimate interests</strong> (Art. 6(1)(f)) &mdash; to operate, secure, and improve the App, to detect abuse, and to serve non-personalized ads in the free tier. We&rsquo;ve weighed these interests against your rights and believe they are not overridden.</li>
+          <li><strong>Consent</strong> (Art. 6(1)(a)) &mdash; for personalized advertising via AdMob, where you have granted iOS Tracking permission and provided consent through Google&rsquo;s EU Consent Management Platform. You can withdraw consent at any time without affecting the lawfulness of prior processing.</li>
+          <li><strong>Compliance with legal obligations</strong> (Art. 6(1)(c)) &mdash; where we must process information to comply with applicable law.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="retention">
+        <h2><span class="num">9</span>Data Retention</h2>
+        <ul>
+          <li><strong>On-device data</strong> (scan history, generated codes, preferences, app-lock settings) is retained on your iPhone until you delete individual entries, clear all history in Settings, or uninstall the App. Uninstalling removes the local database in full.</li>
+          <li><strong>Apple&rsquo;s purchase records</strong> are retained by Apple in line with their policies and applicable tax/accounting law.</li>
+          <li><strong>Ad serving and measurement data</strong> collected by Google AdMob is retained by Google according to their published retention schedules.</li>
+          <li><strong>Support emails</strong> sent to <a href="mailto:tanvir4talk+appsupport@gmail.com">tanvir4talk+appsupport@gmail.com</a> are retained for up to 24 months from the last interaction so we can follow up on related issues, and then deleted unless legally required to keep them longer.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="security">
+        <h2><span class="num">10</span>Security</h2>
+        <p>Because Skopi has no account system and we don&rsquo;t run our own back-end, the surface area for breach is intentionally small. The information that exists locally is protected by iOS data protection (encryption-at-rest tied to your device passcode) and, optionally, by the App Lock feature you can enable in Settings, which gates access to your history with Face ID, Touch ID, or a PIN.</p>
+        <p>Network requests made by the App (App Store receipt validation, AdMob ad requests) use TLS. No system can be guaranteed to be 100% secure; please use the App Lock feature and your device passcode to protect on-device data.</p>
+      </section>
+
+      <section class="card" id="transfers">
+        <h2><span class="num">11</span>International Data Transfers</h2>
+        <p>Apple and Google operate global infrastructure. The limited information they process on our behalf may be transferred to and processed in the United States and other countries. Where personal data is transferred from the EEA, UK, or Switzerland to a third country, the relevant provider relies on appropriate safeguards such as the European Commission&rsquo;s <strong>Standard Contractual Clauses</strong>, the EU-U.S. Data Privacy Framework, and the UK International Data Transfer Addendum, as detailed in their respective privacy policies.</p>
+      </section>
+
+      <section class="card" id="your-rights">
+        <h2><span class="num">12</span>Your Rights</h2>
+        <p>Depending on where you live, you may have the right to:</p>
+        <ul>
+          <li><strong>Access</strong> the personal data we hold about you.</li>
+          <li><strong>Rectify</strong> inaccurate personal data.</li>
+          <li><strong>Erase</strong> personal data we hold about you (the &ldquo;right to be forgotten&rdquo;).</li>
+          <li><strong>Restrict</strong> or <strong>object to</strong> certain processing.</li>
+          <li><strong>Withdraw consent</strong> for processing based on consent (such as personalized advertising).</li>
+          <li><strong>Data portability</strong> for data you have provided.</li>
+          <li><strong>Lodge a complaint</strong> with a supervisory authority &mdash; for EEA users, your local Data Protection Authority; for UK users, the <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer">Information Commissioner&rsquo;s Office</a>.</li>
+        </ul>
+        <p>Because the App stores your scan history and generated codes only on your device, you can exercise the access, rectification, erasure, and portability rights for those records directly within the App: long-press an entry to delete it, or use <em>Settings &rarr; Clear All History</em> to delete everything at once. Uninstalling Skopi removes all on-device data.</p>
+        <p>For the limited categories of personal data processed off-device (App Store entitlements, ad-serving data), please contact us at <a href="mailto:tanvir4talk+appsupport@gmail.com">tanvir4talk+appsupport@gmail.com</a> and we will work with Apple and Google to honor your request to the extent it concerns data they process on our behalf.</p>
+      </section>
+
+      <section class="card" id="california">
+        <h2><span class="num">13</span>California Privacy Rights</h2>
+        <p>If you are a California resident, the California Consumer Privacy Act (CCPA), as amended by the California Privacy Rights Act (CPRA), gives you the rights to know, delete, correct, and limit the use of your personal information, and to opt out of its sale or sharing for cross-context behavioral advertising.</p>
+        <p>We <strong>do not sell</strong> personal information for money. We may &ldquo;share&rdquo; an advertising identifier with Google AdMob for cross-context behavioral advertising as that term is defined under the CPRA. You can opt out of this sharing in two equivalent ways:</p>
+        <ul>
+          <li>In the iOS App Tracking Transparency prompt, tap <strong>Ask App Not to Track</strong>, or change the setting later in <em>iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking &rarr; Skopi</em>.</li>
+          <li>Purchase <strong>Skopi Pro</strong> to disable advertising entirely.</li>
+        </ul>
+        <p>We honor Global Privacy Control (GPC) signals to the extent they are technically supported by Apple&rsquo;s in-app advertising framework. We do not knowingly process the personal information of California residents under 16 for sale or sharing without affirmative authorization.</p>
+      </section>
+
+      <section class="card" id="children">
+        <h2><span class="num">14</span>Children&rsquo;s Privacy</h2>
+        <p>Skopi is rated 4+ on the App Store and is suitable for general audiences. The App is not directed to children under 13 (or the equivalent minimum age in your jurisdiction), and we do not knowingly collect personal information from children. If you believe a child has provided personal information to us, please contact us and we will delete it.</p>
+        <p>For users in jurisdictions where parental consent is required for personalized advertising, AdMob is configured to serve ads consistent with applicable family policies in line with the Children&rsquo;s Online Privacy Protection Act (COPPA) and similar laws.</p>
+      </section>
+
+      <section class="card" id="changes">
+        <h2><span class="num">15</span>Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time to reflect changes to the App, our practices, or applicable law. When we make material changes, we will update the &ldquo;Last updated&rdquo; date at the top and, where appropriate, notify you within the App on next launch. Continued use of Skopi after the effective date of an updated policy means you accept the changes.</p>
+      </section>
+
+      <section class="card" id="contact">
+        <h2><span class="num">16</span>Contact</h2>
+        <p>For privacy questions, requests to exercise your rights, or any feedback about this policy, please reach out to:</p>
+        <p style="font-size: 17px; margin-top: 6px;"><a href="mailto:tanvir4talk+appsupport@gmail.com">tanvir4talk+appsupport@gmail.com</a></p>
+        <p>We aim to respond within 14 business days, and within the deadlines required by applicable law for verifiable rights requests.</p>
+        <div class="highlight">
+          Need help with the App itself rather than privacy? Visit our <a href="https://tanvirnh.github.io/skopi-support-/">Support page</a> for FAQs and troubleshooting.
+        </div>
+      </section>
+
+      <footer>
+        <div>&copy; <span id="year">2026</span> Skopi. All rights reserved.</div>
+        <a class="back-link" href="https://tanvirnh.github.io/skopi-support-/">&larr; Skopi Support</a>
+      </footer>
+    </main>
+  </div>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
 
