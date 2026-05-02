@@ -227,6 +227,63 @@
     font-size: 14.5px;
   }
 
+  /* ✅ Primary gradient Email Support button (used in Contact section) */
+  .email-support-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border-radius: 999px;
+    border: none;
+    background: var(--hero-grad);
+    color: #0A0A0B;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: opacity .15s ease, transform .15s ease;
+    white-space: nowrap;
+    margin-top: 10px;
+  }
+  .email-support-btn:hover {
+    opacity: 0.88;
+    transform: translateY(-1px);
+    border-bottom: none;
+  }
+  .email-support-btn svg {
+    width: 16px; height: 16px; flex: none;
+  }
+
+  /* ✅ Secondary subtle Email Support button (used inline within sections) */
+  .email-support-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--stroke-strong);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text);
+    font: inherit;
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background .15s ease, border-color .15s ease, transform .15s ease;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+  .email-support-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(255, 255, 255, 0.28);
+    transform: translateY(-1px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+  }
+  .email-support-btn-secondary svg {
+    width: 13px; height: 13px; flex: none; color: #B7F0D2;
+  }
+
   footer {
     margin-top: 48px;
     padding-top: 28px;
@@ -316,10 +373,18 @@
         </div>
       </section>
 
+      <!-- ✅ CHANGED: inline email → secondary button -->
       <section class="card" id="scope">
         <h2><span class="num">1</span>Scope &amp; Operator</h2>
         <p>This Privacy Policy applies to the <strong>Skopi</strong> mobile application (the &ldquo;App&rdquo;) for iOS, distributed via the Apple App Store, and to the related websites at <a href="https://tanvirnh.github.io/skopi-privacy-policy/">tanvirnh.github.io/skopi-privacy-policy</a> and <a href="https://tanvirnh.github.io/skopi-support-/">tanvirnh.github.io/skopi-support-</a>.</p>
-        <p>The App is operated by an independent developer (&ldquo;<strong>we</strong>&rdquo;, &ldquo;<strong>us</strong>&rdquo;, &ldquo;<strong>our</strong>&rdquo;), reachable at <a href="mailto:tanvir4talk+appsupport@gmail.com">tanvir4talk+appsupport@gmail.com</a>. For the purposes of the EU General Data Protection Regulation (GDPR) and the UK GDPR, the operator acts as the data controller for the limited categories of personal data described below.</p>
+        <p>The App is operated by an independent developer (&ldquo;<strong>we</strong>&rdquo;, &ldquo;<strong>us</strong>&rdquo;, &ldquo;<strong>our</strong>&rdquo;), reachable via the button below. For the purposes of the EU General Data Protection Regulation (GDPR) and the UK GDPR, the operator acts as the data controller for the limited categories of personal data described below.</p>
+        <a class="email-support-btn-secondary" href="mailto:tanvir4talk+appsupport@gmail.com?subject=Skopi%20Privacy" aria-label="Email Skopi">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="3"/>
+            <path d="M2 7l10 6 10-6"/>
+          </svg>
+          Email Us
+        </a>
       </section>
 
       <section class="card" id="info-we-collect">
@@ -433,13 +498,23 @@
         </ul>
       </section>
 
+      <!-- ✅ CHANGED: inline email in retention bullet → secondary button -->
       <section class="card" id="retention">
         <h2><span class="num">9</span>Data Retention</h2>
         <ul>
           <li><strong>On-device data</strong> (scan history, generated codes, preferences, app-lock settings) is retained on your iPhone until you delete individual entries, clear all history in Settings, or uninstall the App. Uninstalling removes the local database in full.</li>
           <li><strong>Apple&rsquo;s purchase records</strong> are retained by Apple in line with their policies and applicable tax/accounting law.</li>
           <li><strong>Ad serving and measurement data</strong> collected by Google AdMob is retained by Google according to their published retention schedules.</li>
-          <li><strong>Support emails</strong> sent to <a href="mailto:tanvir4talk+appsupport@gmail.com">tanvir4talk+appsupport@gmail.com</a> are retained for up to 24 months from the last interaction so we can follow up on related issues, and then deleted unless legally required to keep them longer.</li>
+          <li><strong>Support emails</strong> sent via the button below are retained for up to 24 months from the last interaction so we can follow up on related issues, and then deleted unless legally required to keep them longer.
+            <br/><br/>
+            <a class="email-support-btn-secondary" href="mailto:tanvir4talk+appsupport@gmail.com?subject=Skopi%20Support" aria-label="Email Skopi Support">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="3"/>
+                <path d="M2 7l10 6 10-6"/>
+              </svg>
+              Email Support
+            </a>
+          </li>
         </ul>
       </section>
 
@@ -454,6 +529,7 @@
         <p>Apple and Google operate global infrastructure. The limited information they process on our behalf may be transferred to and processed in the United States and other countries. Where personal data is transferred from the EEA, UK, or Switzerland to a third country, the relevant provider relies on appropriate safeguards such as the European Commission&rsquo;s <strong>Standard Contractual Clauses</strong>, the EU-U.S. Data Privacy Framework, and the UK International Data Transfer Addendum, as detailed in their respective privacy policies.</p>
       </section>
 
+      <!-- ✅ CHANGED: inline email → secondary button -->
       <section class="card" id="your-rights">
         <h2><span class="num">12</span>Your Rights</h2>
         <p>Depending on where you live, you may have the right to:</p>
@@ -467,7 +543,14 @@
           <li><strong>Lodge a complaint</strong> with a supervisory authority &mdash; for EEA users, your local Data Protection Authority; for UK users, the <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer">Information Commissioner&rsquo;s Office</a>.</li>
         </ul>
         <p>Because the App stores your scan history and generated codes only on your device, you can exercise the access, rectification, erasure, and portability rights for those records directly within the App: long-press an entry to delete it, or use <em>Settings &rarr; Clear All History</em> to delete everything at once. Uninstalling Skopi removes all on-device data.</p>
-        <p>For the limited categories of personal data processed off-device (App Store entitlements, ad-serving data), please contact us at <a href="mailto:tanvir4talk+appsupport@gmail.com">tanvir4talk+appsupport@gmail.com</a> and we will work with Apple and Google to honor your request to the extent it concerns data they process on our behalf.</p>
+        <p>For the limited categories of personal data processed off-device (App Store entitlements, ad-serving data), please contact us using the button below and we will work with Apple and Google to honor your request to the extent it concerns data they process on our behalf.</p>
+        <a class="email-support-btn-secondary" href="mailto:tanvir4talk+appsupport@gmail.com?subject=Skopi%20Privacy%20Rights%20Request" aria-label="Email Skopi for a privacy rights request">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="3"/>
+            <path d="M2 7l10 6 10-6"/>
+          </svg>
+          Submit a Rights Request
+        </a>
       </section>
 
       <section class="card" id="california">
@@ -492,11 +575,18 @@
         <p>We may update this Privacy Policy from time to time to reflect changes to the App, our practices, or applicable law. When we make material changes, we will update the &ldquo;Last updated&rdquo; date at the top and, where appropriate, notify you within the App on next launch. Continued use of Skopi after the effective date of an updated policy means you accept the changes.</p>
       </section>
 
+      <!-- ✅ CHANGED: raw email address → primary gradient button -->
       <section class="card" id="contact">
         <h2><span class="num">16</span>Contact</h2>
-        <p>For privacy questions, requests to exercise your rights, or any feedback about this policy, please reach out to:</p>
-        <p style="font-size: 17px; margin-top: 6px;"><a href="mailto:tanvir4talk+appsupport@gmail.com">tanvir4talk+appsupport@gmail.com</a></p>
-        <p>We aim to respond within 14 business days, and within the deadlines required by applicable law for verifiable rights requests.</p>
+        <p>For privacy questions, requests to exercise your rights, or any feedback about this policy, please reach out using the button below:</p>
+        <a class="email-support-btn" href="mailto:tanvir4talk+appsupport@gmail.com?subject=Skopi%20Privacy" aria-label="Email Skopi about privacy">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="3"/>
+            <path d="M2 7l10 6 10-6"/>
+          </svg>
+          Email Us About Privacy
+        </a>
+        <p style="margin-top: 14px;">We aim to respond within 14 business days, and within the deadlines required by applicable law for verifiable rights requests.</p>
         <div class="highlight">
           Need help with the App itself rather than privacy? Visit our <a href="https://tanvirnh.github.io/skopi-support-/">Support page</a> for FAQs and troubleshooting.
         </div>
@@ -511,4 +601,3 @@
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
-
