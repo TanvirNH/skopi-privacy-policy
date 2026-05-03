@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0A0A0B" />
+<meta name="description" content="Skopi — the fastest, most private way to scan and create QR codes and barcodes on iPhone." />
+<title>Skopi · QR Code & Barcode Scanner</title>
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' fill='white'/><path d='M22 22h6v6h-6zm14 0h6v6h-6zM22 36h6v6h-6zm14 0h6v6h-6z' fill='black'/></svg>" />
+<style>
+  :root {
+    --bg: #0A0A0B;
+    --bg-card: #1A1A1D;
+    --stroke: rgba(255,255,255,0.08);
+    --stroke-strong: rgba(255,255,255,0.16);
+    --text: #FFFFFF;
+    --text-2: rgba(255,255,255,0.72);
+    --text-3: rgba(255,255,255,0.50);
+    --hero-grad: linear-gradient(135deg,#B6FF6E 0%,#6EE7B7 50%,#60A5FA 100%);
+    --shadow: 0 24px 64px rgba(0,0,0,0.55);
+    --radius-lg: 28px;
+    --radius-md: 18px;
+    --radius-sm: 12px;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  body::before{content:"";position:fixed;inset:0;
+    background:radial-gradient(1200px 600px at 80% -10%,rgba(96,165,250,0.10),transparent 60%),
+               radial-gradient(900px 500px at -10% 20%,rgba(110,231,183,0.08),transparent 60%);
+    pointer-events:none;z-index:0;}
+  nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
+    padding:14px 24px;background:rgba(10,10,11,0.82);backdrop-filter:blur(20px);
+    border-bottom:1px solid var(--stroke);}
+  .nav-logo{display:inline-flex;align-items:center;gap:10px;padding:6px 14px 6px 8px;
+    border:1px solid var(--stroke-strong);border-radius:999px;
+    background:rgba(255,255,255,0.03);text-decoration:none;color:var(--text);}
+  .nav-logo .mark{width:26px;height:26px;border-radius:50%;background:#fff;display:grid;place-items:center;}
+  .nav-logo .mark svg{width:14px;height:14px;}
+  .nav-logo .name{font-weight:700;font-size:15px;letter-spacing:.2px;}
+  .nav-links{display:flex;align-items:center;gap:6px;}
+  .nav-link{color:var(--text-2);font-size:14px;font-weight:500;text-decoration:none;
+    padding:6px 12px;border-radius:999px;transition:color .15s,background .15s;border-bottom:none;}
+  .nav-link:hover{color:#fff;background:rgba(255,255,255,0.06);}
+  @media(max-width:560px){.nav-link{display:none;}}
+  .wrap{position:relative;z-index:1;max-width:820px;margin:0 auto;padding:0 22px 96px;}
+  .hero{text-align:center;padding:72px 0 48px;}
+  .hero-logo{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 8px;
+    border:1px solid var(--stroke-strong);border-radius:999px;
+    background:rgba(255,255,255,0.03);margin-bottom:28px;}
+  .hero-logo .mark{width:28px;height:28px;border-radius:50%;background:#fff;display:grid;place-items:center;}
+  .hero-logo .mark svg{width:16px;height:16px;}
+  .hero-logo .name{font-weight:700;letter-spacing:.2px;}
+  h1{font-weight:800;font-size:clamp(36px,5.4vw,52px);line-height:1.08;letter-spacing:-0.02em;margin:0 0 14px;
+    background:var(--hero-grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .lede{color:var(--text-2);font-size:17px;margin:0 auto 32px;max-width:580px;}
+  .pill-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:20px;}
+  .pill{font-size:12.5px;font-weight:600;padding:6px 11px;border-radius:999px;
+    background:rgba(110,231,183,0.10);border:1px solid rgba(110,231,183,0.35);color:#B7F0D2;}
+  .mockup-wrap{display:flex;justify-content:center;margin:44px 0 56px;}
+  .phone{width:236px;background:linear-gradient(160deg,#1c2a2c,#111418);border-radius:40px;
+    border:1.5px solid rgba(110,231,183,0.2);padding:20px 14px;
+    box-shadow:0 40px 100px rgba(0,0,0,0.65),0 0 0 1px rgba(255,255,255,0.04);}
+  .notch{width:72px;height:18px;background:#0A0A0B;border-radius:0 0 12px 12px;margin:0 auto 18px;}
+  .screen{background:#0d1a1c;border-radius:20px;padding:16px 12px;display:flex;flex-direction:column;align-items:center;gap:12px;}
+  .screen-label{font-size:10px;color:#6EE7B7;font-weight:700;letter-spacing:.1em;text-transform:uppercase;}
+  .scan-frame{width:132px;height:132px;position:relative;margin:4px auto;}
+  .sf-c{position:absolute;width:26px;height:26px;border-color:#6EE7B7;border-style:solid;}
+  .sf-tl{top:0;left:0;border-width:2.5px 0 0 2.5px;border-radius:4px 0 0 0;}
+  .sf-tr{top:0;right:0;border-width:2.5px 2.5px 0 0;border-radius:0 4px 0 0;}
+  .sf-bl{bottom:0;left:0;border-width:0 0 2.5px 2.5px;border-radius:0 0 0 4px;}
+  .sf-br{bottom:0;right:0;border-width:0 2.5px 2.5px 0;border-radius:0 0 4px 0;}
+  .sf-line{width:112px;height:1.5px;background:linear-gradient(90deg,transparent,#6EE7B7,transparent);
+    position:absolute;left:10px;animation:scanline 2s ease-in-out infinite;}
+  @keyframes scanline{0%,100%{top:12%;}50%{top:82%;}}
+  .qr-img{width:82px;height:82px;background:#fff;border-radius:5px;padding:5px;margin:0 auto;}
+  .qr-img svg{width:100%;height:100%;}
+  .scan-result{background:rgba(110,231,183,0.08);border:1px solid rgba(110,231,183,0.22);
+    border-radius:8px;padding:6px 10px;width:100%;text-align:center;}
+  .scan-result span{font-size:10px;color:#B7F0D2;font-weight:600;}
+  main{display:flex;flex-direction:column;gap:18px;}
+  section.card{background:var(--bg-card);border:1px solid var(--stroke);
+    border-radius:var(--radius-lg);padding:28px 28px 22px;box-shadow:var(--shadow);}
+  section.card h2{font-weight:800;font-size:22px;letter-spacing:-0.01em;margin:0 0 8px;
+    display:flex;align-items:center;gap:10px;}
+  .num{flex:none;width:30px;height:30px;display:grid;place-items:center;
+    border-radius:9px;background:rgba(255,255,255,0.06);border:1px solid var(--stroke);
+    font-size:13px;font-weight:700;color:var(--text-2);}
+  section.card p{color:var(--text-2);margin:10px 0 0;}
+  section.card ul{padding-left:20px;margin:12px 0 0;}
+  section.card li{color:var(--text-2);margin:6px 0;font-size:15px;}
+  li::marker{color:var(--text-3);}
+  strong{color:var(--text);font-weight:600;}
+  a{color:#BEE7FF;text-decoration:none;border-bottom:1px solid rgba(190,231,255,0.35);transition:border-color .15s;}
+  a:hover{border-bottom-color:#BEE7FF;}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;}
+  @media(max-width:560px){.two-col{grid-template-columns:1fr;}}
+  .col-box{border-radius:var(--radius-md);padding:18px 16px;border:1px solid var(--stroke);}
+  .col-box.free{background:rgba(255,255,255,0.03);}
+  .col-box.pro{background:rgba(110,231,183,0.06);border-color:rgba(110,231,183,0.25);}
+  .col-title{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;}
+  .col-title.free-c{color:var(--text-3);}
+  .col-title.pro-c{color:#6EE7B7;}
+  .col-box ul{padding-left:18px;margin:0;}
+  .col-box li{font-size:13.5px;margin:5px 0;}
+  .col-box.free li{color:var(--text-2);}
+  .col-box.pro li{color:#B7F0D2;}
+  .highlight{margin-top:16px;padding:14px 16px;border-radius:var(--radius-sm);
+    background:rgba(110,231,183,0.06);border:1px solid rgba(110,231,183,0.18);
+    color:var(--text);font-size:14.5px;}
+  footer{margin-top:48px;padding-top:28px;border-top:1px solid var(--stroke);
+    text-align:center;color:var(--text-3);font-size:13px;}
+  .footer-links{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin:10px 0;}
+  .footer-links a{font-size:13px;color:var(--text-2);text-decoration:none;border-bottom:none;}
+  .footer-links a:hover{color:#fff;}
+  ::selection{background:rgba(110,231,183,0.35);color:#fff;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">
+    <span class="mark">
+      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="4" height="4" rx="0.5" fill="black"/>
+        <rect x="11" y="1" width="4" height="4" rx="0.5" fill="black"/>
+        <rect x="1" y="11" width="4" height="4" rx="0.5" fill="black"/>
+        <rect x="7" y="7" width="2" height="2" fill="black"/>
+        <rect x="11" y="7" width="2" height="2" fill="black"/>
+        <rect x="7" y="11" width="2" height="2" fill="black"/>
+        <rect x="13" y="13" width="2" height="2" fill="black"/>
+      </svg>
+    </span>
+    <span class="name">Skopi</span>
+  </a>
+  <div class="nav-links">
+    <a class="nav-link" href="https://tanvirnh.github.io/skopi-support-/">Support</a>
+    <a class="nav-link" href="https://tanvirnh.github.io/skopi-privacy-policy/">Privacy</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="hero-logo">
+      <span class="mark">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="1" y="1" width="4" height="4" rx="0.5" fill="black"/>
+          <rect x="11" y="1" width="4" height="4" rx="0.5" fill="black"/>
+          <rect x="1" y="11" width="4" height="4" rx="0.5" fill="black"/>
+          <rect x="7" y="7" width="2" height="2" fill="black"/>
+          <rect x="11" y="7" width="2" height="2" fill="black"/>
+          <rect x="7" y="11" width="2" height="2" fill="black"/>
+          <rect x="13" y="13" width="2" height="2" fill="black"/>
+        </svg>
+      </span>
+      <span class="name">Skopi</span>
+    </div>
+    <h1>Point. Scan. Done.</h1>
+    <p class="lede">The fastest, most private way to scan and create QR codes and barcodes on iPhone. No account. No cloud. Just scan.</p>
+    <div class="pill-row">
+      <span class="pill">Free on App Store</span>
+      <span class="pill">No account needed</span>
+      <span class="pill">On-device · Private</span>
+    </div>
+  </header>
+
+  <div class="mockup-wrap" aria-hidden="true">
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="screen">
+        <div class="screen-label">Point &amp; Scan</div>
+        <div class="scan-frame">
+          <div class="sf-c sf-tl"></div><div class="sf-c sf-tr"></div>
+          <div class="sf-c sf-bl"></div><div class="sf-c sf-br"></div>
+          <div class="qr-img">
+            <svg viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="21" height="21" fill="white"/>
+              <rect x="1" y="1" width="7" height="7" fill="black"/><rect x="2" y="2" width="5" height="5" fill="white"/><rect x="3" y="3" width="3" height="3" fill="black"/>
+              <rect x="13" y="1" width="7" height="7" fill="black"/><rect x="14" y="2" width="5" height="5" fill="white"/><rect x="15" y="3" width="3" height="3" fill="black"/>
+              <rect x="1" y="13" width="7" height="7" fill="black"/><rect x="2" y="14" width="5" height="5" fill="white"/><rect x="3" y="15" width="3" height="3" fill="black"/>
+              <rect x="9" y="1" width="1" height="1" fill="black"/><rect x="11" y="1" width="1" height="1" fill="black"/>
+              <rect x="9" y="3" width="3" height="1" fill="black"/><rect x="9" y="5" width="1" height="3" fill="black"/>
+              <rect x="11" y="5" width="1" height="1" fill="black"/><rect x="13" y="9" width="1" height="3" fill="black"/>
+              <rect x="9" y="9" width="3" height="1" fill="black"/><rect x="9" y="11" width="1" height="3" fill="black"/>
+              <rect x="11" y="11" width="3" height="1" fill="black"/><rect x="15" y="9" width="1" height="1" fill="black"/>
+              <rect x="17" y="9" width="3" height="3" fill="black"/><rect x="18" y="10" width="1" height="1" fill="white"/>
+              <rect x="15" y="13" width="3" height="1" fill="black"/><rect x="19" y="13" width="1" height="3" fill="black"/>
+              <rect x="15" y="15" width="1" height="3" fill="black"/><rect x="17" y="17" width="3" height="1" fill="black"/>
+              <rect x="11" y="15" width="1" height="1" fill="black"/><rect x="13" y="15" width="1" height="3" fill="black"/>
+            </svg>
+          </div>
+          <div class="sf-line"></div>
+        </div>
+        <div class="scan-result"><span>✓ Smart action ready</span></div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <section class="card">
+      <h2><span class="num">★</span>Everything you can do</h2>
+      <p>Skopi recognizes QR codes, product barcodes, contact cards, WiFi networks, links, phone numbers, emails, and more — instantly. Tap a result and Skopi opens it the smart way: dial the number, join the WiFi, save the contact, or open the link in your favorite browser.</p>
+      <ul>
+        <li>Scan QR codes and 1D barcodes (EAN, UPC, Code 128 / 39 / 93, ITF, Data Matrix, PDF417, Aztec)</li>
+        <li>Scan from photos in your library</li>
+        <li>Generate QR codes for URLs, plain text, WiFi, contacts (vCard), email, phone, and SMS</li>
+        <li>Smart actions on every result — open link, call number, send email, join WiFi</li>
+        <li>Local scan history with search and filters</li>
+        <li>Light haptics + scan beep, both toggleable</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2><span class="num">1</span>Private by design</h2>
+      <p>Skopi never uploads your scans. Your scan history lives on your iPhone, encrypted by iOS. No account, no cloud, no tracking of what you scan.</p>
+      <div class="highlight">
+        Read the full <a href="https://tanvirnh.github.io/skopi-privacy-policy/">Privacy Policy →</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2><span class="num">2</span>Upgrade to Skopi Pro</h2>
+      <p>Unlock the full toolkit — no ads, unlimited history, custom codes, and more.</p>
+      <div class="two-col">
+        <div class="col-box free">
+          <div class="col-title free-c">Free</div>
+          <ul>
+            <li>Scan QR codes and barcodes</li>
+            <li>Scan from photos</li>
+            <li>Smart actions on results</li>
+            <li>Basic QR generation</li>
+            <li>Scan history</li>
+          </ul>
+        </div>
+        <div class="col-box pro">
+          <div class="col-title pro-c">✦ Pro</div>
+          <ul>
+            <li>No ads</li>
+            <li>Unlimited scan history</li>
+            <li>All QR types (WiFi, vCard, Email, Phone, SMS)</li>
+            <li>Custom colors &amp; embedded logos</li>
+            <li>Batch Scan Mode</li>
+            <li>Folders to organize scans</li>
+            <li>Hide-duplicates view</li>
+            <li>CSV export</li>
+            <li>App Lock with Face ID</li>
+            <li>Choose your default browser</li>
+          </ul>
+        </div>
+      </div>
+      <p style="margin-top:16px;font-size:13px;color:var(--text-3);">Skopi Pro is offered as a Monthly or Yearly auto-renewing subscription. New subscribers can start with a free trial. Payment is charged to your Apple ID at confirmation of purchase. Subscriptions auto-renew unless cancelled at least 24 hours before the end of the current period. Manage or cancel anytime in <strong style="color:var(--text-2);">Settings → Apple ID → Subscriptions</strong>.</p>
+    </section>
+
+    <section class="card">
+      <h2><span class="num">3</span>Support</h2>
+      <p>Need help with Skopi? Visit the support page for FAQs and troubleshooting.</p>
+      <div class="highlight">
+        <a href="https://tanvirnh.github.io/skopi-support-/">Visit Skopi Support →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div>&copy; <span id="yr">2026</span> Skopi. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="https://tanvirnh.github.io/skopi-privacy-policy/">Privacy Policy</a>
+      <a href="https://tanvirnh.github.io/skopi-support-/">Support</a>
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
+    </div>
+  </footer>
+
+</div>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
